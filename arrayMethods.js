@@ -42,10 +42,11 @@ const postTaxPrices = prices.map((el) => {
   return el * 1.07;
 });
 console.log(postTaxPrices);
+
 ////////// PROBLEM 3 //////////
 
 // Do not edit the code below.
-// const populations = [8175133, 3792621, 2695598, 2100263];
+const populations = [8175133, 3792621, 2695598, 2100263];
 // Do not edit the code above.
 
 /*
@@ -56,8 +57,12 @@ console.log(postTaxPrices);
 */
 
 // CODE HERE
-// const totalPopulation //  = populations.reduce(/* Provide Your Callback Here */)
+const totalPopulation = populations.reduce((acc, el) => {
+  return (acc += el);
+});
+console.log(totalPopulation);
 
+console.log(8175133 + 3792621 + 2695598 + 2100263);
 ////////// PROBLEM 4 //////////
 
 // Do not edit the code below.
