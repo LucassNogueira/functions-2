@@ -24,7 +24,7 @@ console.log(evenNumbers);
 ////////// PROBLEM 2 //////////
 
 // Do not edit the code below.
-// const prices = [15.00, 23.00, 78.00, 34.00, 12.00, 86.00, 12.00, 79.00, 32.00];
+const prices = [15.0, 23.0, 78.0, 34.0, 12.0, 86.0, 12.0, 79.0, 32.0];
 // Do not edit the code above.
 
 /*
@@ -38,8 +38,10 @@ console.log(evenNumbers);
 */
 
 // CODE HERE
-// const postTaxPrices // = prices.map(/* Provide Your Callback Here );
-
+const postTaxPrices = prices.map((el) => {
+  return el * 1.07;
+});
+console.log(postTaxPrices);
 ////////// PROBLEM 3 //////////
 
 // Do not edit the code below.
