@@ -114,6 +114,18 @@ contains(names, "Colt", (result) => {
 
 // CODE HERE
 
+function uniq(arr, callback) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] === arr[j]) {
+        arr.splice(j, 1);
+        j--;
+      }
+    }
+  }
+  callback(arr);
+}
+
 /*
   Invoke the uniq function, passing in the names array from above and a callback function.
   The callback function should take in one parameter called uniqArr.
@@ -122,6 +134,8 @@ contains(names, "Colt", (result) => {
 */
 
 // CODE HERE
+
+uniq(names, function uniqArr(arr) {});
 
 ////////// PROBLEM 6 //////////
 
