@@ -85,7 +85,7 @@ last(names, (lastName) => {
 // CODE HERE
 
 function contains(arr, name, callback) {
-  if (arr.includes(name)) {
+  if (arr.includes(name) === true) {
     callback(true);
   } else {
     callback(false);
@@ -135,7 +135,11 @@ function uniq(arr, callback) {
 
 // CODE HERE
 
-uniq(names, function uniqArr(arr) {});
+uniq(names, (Arr) =>
+  console.log(
+    `The new names array with all the duplicate items removed is: ${Arr}`
+  )
+);
 
 ////////// PROBLEM 6 //////////
 
@@ -146,6 +150,8 @@ uniq(names, function uniqArr(arr) {});
 
 // CODE HERE
 
+const each = (arr, cb) => arr.forEach((el, i) => cb(el, i));
+
 /*
   Invoke the each function, passing in the names array and a callback function.
   The callback function should take in two paremeters, item and index.
@@ -154,6 +160,8 @@ uniq(names, function uniqArr(arr) {});
 */
 
 // CODE HERE
+
+each(names, (el, i) => console.log(`the item at index ${i} is ${el}`));
 
 ////////// PROBLEM 7 //////////
 
