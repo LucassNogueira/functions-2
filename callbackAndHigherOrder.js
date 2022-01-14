@@ -28,7 +28,7 @@
 // The names array will be used in problems 2 - 6.
 
 // Do not edit the code below.
-var names = ["Tyler", "Cahlan", "Ryan", "Colt", "Tyler", "Blaine", "Cahlan"];
+// var names = ["Tyler", "Cahlan", "Ryan", "Colt", "Tyler", "Blaine", "Cahlan"];
 // Do not edit the code above.
 
 ////////// PROBLEM 2 //////////
@@ -40,17 +40,17 @@ var names = ["Tyler", "Cahlan", "Ryan", "Colt", "Tyler", "Blaine", "Cahlan"];
 
 // CODE HERE
 
-function first(arr, callback) {
-  callback(arr[0]);
-}
+// function first(arr, callback) {
+//   callback(arr[0]);
+// }
 
-// UNCOMMENT THE FUNCTION CALL BELOW
-// RUN THIS FILE WITH NODE
-// CHECK YOUR ANSWER
+// // UNCOMMENT THE FUNCTION CALL BELOW
+// // RUN THIS FILE WITH NODE
+// // CHECK YOUR ANSWER
 
-first(names, (firstName) => {
-  console.log("The first name in names is " + firstName);
-});
+// first(names, (firstName) => {
+//   console.log("The first name in names is " + firstName);
+// });
 
 ////////// PROBLEM 3 //////////
 
@@ -61,17 +61,17 @@ first(names, (firstName) => {
 
 // CODE HERE
 
-function last(arr, callback) {
-  callback(arr[arr.length - 1]);
-}
+// function last(arr, callback) {
+//   callback(arr[arr.length - 1]);
+// }
 
-// UNCOMMENT THE FUNCTION CALL BELOW
-// RUN THIS FILE WITH NODE
-// CHECK YOUR ANSWER
+// // UNCOMMENT THE FUNCTION CALL BELOW
+// // RUN THIS FILE WITH NODE
+// // CHECK YOUR ANSWER
 
-last(names, (lastName) => {
-  console.log("The last name in names is " + lastName);
-});
+// // last(names, (lastName) => {
+// //   console.log("The last name in names is " + lastName);
+// // });
 
 ////////// PROBLEM 4 //////////
 
@@ -84,25 +84,25 @@ last(names, (lastName) => {
 
 // CODE HERE
 
-function contains(arr, name, callback) {
-  if (arr.includes(name) === true) {
-    callback(true);
-  } else {
-    callback(false);
-  }
-}
+// function contains(arr, name, callback) {
+//   if (arr.includes(name) === true) {
+//     callback(true);
+//   } else {
+//     callback(false);
+//   }
+// }
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-contains(names, "Colt", (result) => {
-  if (result === true) {
-    console.log("Colt is in the array");
-  } else {
-    console.log("Colt is not in the array");
-  }
-});
+// contains(names, "Colt", (result) => {
+//   if (result === true) {
+//     console.log("Colt is in the array");
+//   } else {
+//     console.log("Colt is not in the array");
+//   }
+// });
 
 ////////// PROBLEM 5 //////////
 
@@ -114,17 +114,17 @@ contains(names, "Colt", (result) => {
 
 // CODE HERE
 
-function uniq(arr, callback) {
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = i + 1; j < arr.length; j++) {
-      if (arr[i] === arr[j]) {
-        arr.splice(j, 1);
-        j--;
-      }
-    }
-  }
-  callback(arr);
-}
+// function uniq(arr, callback) {
+//   for (let i = 0; i < arr.length; i++) {
+//     for (let j = i + 1; j < arr.length; j++) {
+//       if (arr[i] === arr[j]) {
+//         arr.splice(j, 1);
+//         j--;
+//       }
+//     }
+//   }
+//   callback(arr);
+// }
 
 /*
   Invoke the uniq function, passing in the names array from above and a callback function.
@@ -135,11 +135,11 @@ function uniq(arr, callback) {
 
 // CODE HERE
 
-uniq(names, (Arr) =>
-  console.log(
-    `The new names array with all the duplicate items removed is: ${Arr}`
-  )
-);
+// uniq(names, (Arr) =>
+//   console.log(
+//     `The new names array with all the duplicate items removed is: ${Arr}`
+//   )
+// );
 
 ////////// PROBLEM 6 //////////
 
@@ -150,8 +150,9 @@ uniq(names, (Arr) =>
 
 // CODE HERE
 
-const each = (arr, cb) => arr.forEach((el, i) => cb(el, i));
-
+// const each = (arr, cb) => {
+//   arr.forEach((el, i) => cb(el, i));
+// };
 /*
   Invoke the each function, passing in the names array and a callback function.
   The callback function should take in two paremeters, item and index.
@@ -161,7 +162,7 @@ const each = (arr, cb) => arr.forEach((el, i) => cb(el, i));
 
 // CODE HERE
 
-each(names, (el, i) => console.log(`the item at index ${i} is ${el}`));
+// each(names, (el, i) => console.log(`the item at index ${i} is ${el}`));
 
 ////////// PROBLEM 7 //////////
 
@@ -194,14 +195,28 @@ var users = [
 // Do not edit the code above.
 
 // CODE HERE
+const getUserById = (arr, id, cb) => {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].id === id) {
+      return cb(arr[i]);
+    }
+  }
+};
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-// getUserById(users, '16t', user => {
-//   console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address)
-// })
+// getUserById(users, "15a", (user) => {
+//   console.log(
+//     `The user with the id ${user.id} has the email of ` +
+//       user.email +
+//       " the name of " +
+//       user.name +
+//       " and the address of " +
+//       user.address
+//   );
+// });
 
 ////////// CHALLENGE //////////
 
@@ -221,6 +236,8 @@ var users = [
 
 // CODE HERE
 
+const addingFactory = (num1) => (cb = (num2) => num1 + num2);
+
 /*
   Now that you have addingFactory, you can create other
   functions from it. 
@@ -235,6 +252,8 @@ var users = [
 
 // CODE HERE
 
+const addTen = addingFactory(10);
+
 /*
   Now the inner function is stored in the addTen variable! 
 
@@ -247,6 +266,8 @@ var users = [
 
 // CODE HERE
 
+console.log(addTen(30));
+console.log(addTen(50));
 /*
   Let's make another function from the addingFactory. 
 
@@ -259,3 +280,7 @@ var users = [
 */
 
 // CODE HERE
+
+const addThirteen = addingFactory(13);
+
+console.log(addThirteen(10));
